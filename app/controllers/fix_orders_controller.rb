@@ -1,0 +1,2 @@
+class FixOrdersController < ApplicationController
+end
