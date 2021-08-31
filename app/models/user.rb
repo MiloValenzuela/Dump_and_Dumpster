@@ -4,4 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
+
+  # def uploaded_monkeys
+  #   uploads = self.uploads
+  #   posts = []
+  #   uploads.each do |upload|
+  #     posts << upload.post
+  #   end
+
+  #   return posts
+  # end
 end
