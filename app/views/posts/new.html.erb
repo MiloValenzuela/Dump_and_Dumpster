@@ -1,1 +1,7 @@
 hello world
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.submit %>
+<% end %>
