@@ -22,6 +22,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def my_posts
+    # if current_user.posts.empty?
+    #   @posts = current_user.uploaded_posts
+    # else
+    #   @posts = current_user.posts
+    # end
+    @user_posts = current_user.posts
+  end
+
   private
 
   def post_params
