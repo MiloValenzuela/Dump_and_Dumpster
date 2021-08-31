@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body class="login_body">
     <div class="center">
       <h1>Login</h1>
       <form method="post">
@@ -20,7 +20,7 @@
           <div class="pass">Forgot Password?</div>
           <input type="submit" value="Login">
           <div class="signup_link"></div>
-            Not a member? <a href="#">Signup</a>
+            Not a member? <%= render "devise/shared/links" %>
       </form>
     </div>
   </body>
