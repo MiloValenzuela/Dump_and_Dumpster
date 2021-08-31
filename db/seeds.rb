@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
+require "open-uri"
+
+
+10.times do
+  post = Post.new(
+    description: Faker::Lorem.sentence,
+    latitude: Faker::IDNumber.south_african_id_number,
+    longitude: Faker::IDNumber.south_african_id_number,
+    user_id: 1
+  )
+  post.save
+end
