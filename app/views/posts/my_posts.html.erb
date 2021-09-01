@@ -1,2 +1,7 @@
-hello
-<%# <%= @user_posts.each %> %>
+<% @user_posts.each do |post| %>
+<%= post.description %>
+<%= post.latitude %>
+<%= post.longitude %>
+<%= cl_image_tag("yfygsxq2umo2rm7wdbrw3il2wy2z",
+      width: 400, height: 300, crop: :fill) %>
+<% end %>
