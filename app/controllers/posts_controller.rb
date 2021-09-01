@@ -17,8 +17,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
 
-      # cs = CleaningStation.near([post.latitude, post.longitude, 20])
-      # FixOrder.create(post: post, cleaning_station: cs )
+
 
       redirect_to post_path(@post)
     else
