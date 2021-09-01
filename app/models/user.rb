@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
+  has_one_attached :photo
 
   # def uploaded_monkeys
   #   uploads = self.uploads
