@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -17,9 +17,10 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
 
-      #HERE
+      # cs = CleaningStation.near([post.latitude, post.longitude, 20])
+      # FixOrder.create(post: post, cleaning_station: cs )
 
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :new
     end
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:description, :latitude, :longitude)
+    params.require(:post).permit(:description, :latitude, :longitude, :photo)
   end
 
 end
