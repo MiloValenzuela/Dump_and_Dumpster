@@ -19,8 +19,7 @@ class PostsController < ApplicationController
       cleaning_station = CleaningStation.near([@post.latitude, @post.longitude], 20)
       FixOrder.create(post: @post, cleaning_station: cleaning_station)
 
-      # cs = CleaningStation.near([post.latitude, post.longitude, 20])
-      # FixOrder.create(post: post, cleaning_station: cs )
+
 
       redirect_to post_path(@post)
     else
