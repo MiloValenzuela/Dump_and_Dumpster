@@ -3,5 +3,9 @@ hello world
   <%= f.input :description %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+
+<h1>Camera not working?</h1>
+<%# <%= link_to "Click here to write a description", post_path(post), class: "btn btn-primary" %> %>

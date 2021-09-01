@@ -2,6 +2,10 @@
 <%= post.description %>
 <%= post.latitude %>
 <%= post.longitude %>
-<%= cl_image_tag("yfygsxq2umo2rm7wdbrw3il2wy2z",
-      width: 400, height: 300, crop: :fill) %>
+<% if post.photo.attached? %>
+  <%= cl_image_tag post.photo.key %>
+  <% else %>
+      <img src="https://source.unsplash.com/random" />
+        </a>
+<% end %>
 <% end %>
