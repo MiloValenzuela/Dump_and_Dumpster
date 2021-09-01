@@ -16,6 +16,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
+      cleaning_station = CleaningStation.near([@post.latitude, @post.longitude], 20)
+      FixOrder.create(post: @post, cleaning_station: cleaning_station)
 
       # cs = CleaningStation.near([post.latitude, post.longitude, 20])
       # FixOrder.create(post: post, cleaning_station: cs )
