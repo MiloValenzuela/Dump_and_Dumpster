@@ -1,11 +1,38 @@
-<html lang="en" dir="ltr">
+<%# <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
-  </head>
+  </head> %>
 
-  <body class="login_body">
+<div class="container">
+  <h2>Log in</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions button btn btn-primary btn-sm">
+      <%= f.button :submit, "Log in" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
+
+
+
+
+
+  <%# <body class="login_body">
     <div class="center">
       <h1>Login</h1>
       <form method="post">
@@ -21,6 +48,6 @@
           <input type="submit" value="Login">
           <div class="signup_link"></div>
             Not a member? <%= render "devise/shared/links" %>
-      </form>
-    </div>
-  </body>
+      <%# </form> %>
+    <%# </div> %>
+  <%# </body> %>
