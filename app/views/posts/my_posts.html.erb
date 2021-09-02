@@ -1,11 +1,34 @@
-<% @user_posts.each do |post| %>
-<%= post.description %>
-<%= post.latitude %>
-<%= post.longitude %>
-<% if post.photo.attached? %>
-  <%= cl_image_tag post.photo.key %>
-  <% else %>
-      <img src="https://source.unsplash.com/random" />
-        </a>
-<% end %>
-<% end %>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h3 class="typed-js"></h3>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row">
+      <div class="col-9 text-center">
+        <h1 class="my-posts">My Posts</h1>
+      </div>
+      <div class="col-3">
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards">
+
+        <div class="card-my-posts">
+          <% @user_posts.each do |post| %>
+            <%= post.description %>
+            <%= post.latitude %>
+            <%= post.longitude %>
+            <% if post.photo.attached? %>
+              <%= cl_image_tag post.photo.key %>
+          <% else %>
+            <img src="https://source.unsplash.com/random" />
+            </a>
+          <% end %>
+          </div>
+    <% end %>
+  </div>
+</div>
