@@ -34,12 +34,14 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    # if current_user.posts.empty?
-    #   @posts = current_user.uploaded_posts
-    # else
-    #   @posts = current_user.posts
-    # end
+
     @user_posts = current_user.posts
+    @markers = @user_posts.geocoded.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude
+      }
+    end
   end
 
   private
