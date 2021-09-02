@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand">  <%= link_to "Home", root_path %>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -19,6 +19,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Add Post</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"> <%= link_to "Map", posts_path %>
       </li>
     </ul>
     <!-- Links -->
