@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def my_posts
+  def user_posts
 
     @user_posts = current_user.posts
     @markers = @user_posts.geocoded.map do |post|
