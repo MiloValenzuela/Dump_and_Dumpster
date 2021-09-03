@@ -1,8 +1,8 @@
 <!--Navbar-->
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light light-blue lighten-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand">  <%= link_to "Home", root_path %>
+  <a class="navbar-brand" href="#">Navbar</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -12,20 +12,17 @@
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
- <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Add a post", new_post_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
         <li class="nav-item">
@@ -33,8 +30,10 @@
         </li>
       <% end %>
     </ul>
-  </div>
-</div>
+    <!-- Links -->
 
-        <%= link_to "Add Post", new_post_path %>
-        <%= link_to "Map", posts_path %>
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
