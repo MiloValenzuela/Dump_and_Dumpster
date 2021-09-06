@@ -1,10 +1,18 @@
 <% @cleaning_stations.each do |cleaning_station| %>
-
-  <h2> <%= cleaning_station.name %> </h2>
-  <p> <%= cleaning_station.address %> </p>
-
+  <h2><%= cleaning_station.name %></h2>
+  <p><%= cleaning_station.address %>
   <% cleaning_station.fix_orders.each do |fix_order| %>
-    <%= fix_order.post.description %>
-    <%= cl_image_tag(fix_order.post.photo.key, width: 300) if fix_order.post.photo.attached? %>
+    <div class="container">
+      <div class="card-trip">
+        <%= cl_image_tag(fix_order.post.photo.key, width: 300) if fix_order.post.photo.attached? %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= fix_order.post.description %></h2>
+            <p><%= fix_order.post.address %></p>
+          </div>
+          <%= link_to "Mark as fixed", post_path(fix_order.post), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    </div>
   <% end %>
 <% end %>
