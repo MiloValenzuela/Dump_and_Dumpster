@@ -14,19 +14,19 @@ CleaningStation.destroy_all
 puts "Creating cleaning stations"
 5.times do
   cleaning_station = CleaningStation.new(
+    name: Faker::Company.name,
     address: Faker::Address.full_address
   )
   cleaning_station.save
 
   2.times do
-    file = URI.open('https://source.unsplash.com/random')
+    file = URI.open('https://source.unsplash.com/random/300x200')
     post = Post.new(
       description: Faker::Lorem.sentence,
       latitude: cleaning_station.latitude + rand(0..0.1),
       longitude: cleaning_station.longitude + rand(0..0.1),
       user_id: 1
     )
-
     post.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     post.save
   end
