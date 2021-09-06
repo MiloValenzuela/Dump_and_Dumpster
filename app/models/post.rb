@@ -13,4 +13,9 @@ class Post < ApplicationRecord
     cleaning_station = CleaningStation.near([self.latitude, self.longitude], 20).first
     FixOrder.create(post: self, cleaning_station: cleaning_station) if cleaning_station
   end
+
+  # adding country to the regular address so we can be more specific later for geocode
+  # def custom_address
+  #   "#{address}, #{country}"
+  # end
 end

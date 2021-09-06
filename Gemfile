@@ -65,3 +65,4 @@ gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 gem "algoliasearch-rails"
+gem 'country_select'
