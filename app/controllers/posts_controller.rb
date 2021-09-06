@@ -21,6 +21,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to cleaning_stations_path
+  end
+
   def user_posts
 
     @user_posts = current_user.posts
