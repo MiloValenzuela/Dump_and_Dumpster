@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "@fortawesome/fontawesome-free/css/all"
+import "@fortawesome/fontawesome-free/css/all";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
