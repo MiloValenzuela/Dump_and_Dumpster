@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   get "user_posts", to: "posts#user_posts", as: "user_posts"
 
-  resources :fix_orders, only: :index
+  resources :cleaning_stations, only: :index
 end
