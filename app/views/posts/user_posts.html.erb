@@ -29,7 +29,7 @@
             <%= post.latitude %>
             <%= post.longitude %>
             <% if post.photo.attached? %>
-              <%= cl_image_tag post.photo.key %>
+              <%= cl_image_tag post.photo.key, width: 300, crop: "fill" %>
           <% else %>
             <img src="https://source.unsplash.com/random" />
             </a>

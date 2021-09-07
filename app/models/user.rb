@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :photo
 
+  def admin?
+    admin
+  end
+
   # def uploaded_monkeys
   #   uploads = self.uploads
   #   posts = []
