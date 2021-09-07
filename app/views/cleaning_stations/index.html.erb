@@ -5,7 +5,7 @@
     <% cleaning_station.fix_orders.each do |fix_order| %>
       <div class="container">
         <div class="card-trip">
-          <%= cl_image_tag(fix_order.post.photo.key, width: 300) if fix_order.post.photo.attached? %>
+          <%= cl_image_tag(fix_order.post.photo.key, width: 300, crop: "fill") if fix_order.post.photo.attached? %>
           <div class="card-trip-infos">
             <div>
               <h2><%= fix_order.post.description %></h2>

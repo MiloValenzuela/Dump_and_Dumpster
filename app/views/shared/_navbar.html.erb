@@ -24,6 +24,11 @@
         <li class="nav-item">
           <%= link_to "Add Post", new_post_path, class: "nav-link" %>
         </li>
+        <% if current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to "Cleaning stations", cleaning_stations_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
