@@ -15,7 +15,7 @@
   <div class="col-sm-6">
     <div class="cards">
     <% @user_posts.each do |post| %>
-        <div class="card-product ">
+        <div class="card-product" data-id="<%=post.id%>">
           <% if post.photo.attached? %>
           <%= cl_image_tag post.photo.key, width: 300, crop: "fill" %>
           <% else %>
