@@ -23,7 +23,7 @@
 }
 
 
-.card-trip .card-trip-infos {
+.card-trip {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -50,9 +50,8 @@
 }
 
 .btn-danger {
-  display: flex;
+  border-radius: 10%;
 }
 
 .card-trip-infos {
-  padding: 16px;
 }

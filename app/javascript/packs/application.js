@@ -35,4 +35,29 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  let cards = document.querySelectorAll(".card-product");
+  console.log(cards) ;
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+      let markers = document.querySelectorAll(".mapboxgl-marker");
+      markers.forEach((marker) => {
+        if(marker.dataset.id === card.dataset.id){
+          let g = marker.querySelector("g") ;
+          let correctG = g.children[1] ;
+          correctG.classList.add("red-marker");
+        }
+      });
+    });
+
+    card.addEventListener("mouseout", () => {
+      let markers = document.querySelectorAll(".mapboxgl-marker");
+      markers.forEach((marker) => {
+        if (marker.dataset.id === card.dataset.id) {
+          let g = marker.querySelector("g");
+          let correctG = g.children[1];
+          correctG.classList.remove("red-marker");
+        }
+      });
+    });
+  });
 });
